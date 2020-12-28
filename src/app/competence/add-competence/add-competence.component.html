@@ -1,0 +1,62 @@
+<div class="container spacer">
+  <div class="card">
+
+    <div class="card-header text-white bg-primary">
+      <strong> Nouvelle competence</strong>
+    </div>
+    <div class="card-body">
+      <div class="form-group col-md-6">
+        <label for="inputZip">Groupe de competence</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+          <option selected>Choose...</option>
+          <option value="1"></option>
+          <option value="2">Developpeur back-end</option>
+          <option value="3">Developpeur front-end</option>
+          <option value="3">Developpeur full-stack</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="">Libelle</label>
+        <input class="form-control" type="text" >
+      </div>
+      <hr>
+
+      <div class="col-md-6" style="margin-left: 150px;">
+        <button class="btn  btn-info">
+          <a  class="clickable text-white" id="edit" >Niveau 1</a>
+        </button>&nbsp;
+        <button  class="btn  btn-info">
+          <a class="clickable text-white" id="add" [routerLink]="['/add-competence']">Niveau 2</a>
+        </button>&nbsp;
+        <button class="btn  btn-info">
+          <a  class="clickable text-white" id="delete">Niveau 3</a>
+        </button>
+      </div>
+
+      <div class="container d-flex">
+        <ul class="list-group col-md-4 inline" style="margin-top:30px;">
+          <li class="list-group-item active">
+            Groupe d'action à réaliser
+          </li>
+          <li class="list-group-item"><textarea class="form-control" aria-label="With textarea"></textarea></li>
+
+        </ul>
+
+        <ul class="list-group col-md-4 inline" style="margin-top:30px;">
+          <li class="list-group-item active">
+            Critères d'évaluation
+          </li>
+          <li class="list-group-item"><textarea class="form-control" aria-label="With textarea"></textarea></li>
+        </ul>
+      </div>
+      <hr>
+      <div style="margin-left: 330px">
+        <button  class="btn  btn-info">
+          <a class="clickable text-white" id="add">Save</a>
+        </button>
+      </div>
+      </div>
+
+  </div>
+</div>
+

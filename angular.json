@@ -91,9 +91,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         },
         "lint": {
@@ -124,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "LastFilRougeAngular"
+  "defaultProject": "LastFilRougeAngular",
+  "cli": {
+    "analytics": "0ff0f1ba-6fb3-49ab-88f9-eb7e3c7f4368"
+  }
 }

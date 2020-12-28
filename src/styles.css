@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+.spacer{
+  margin-top: 38px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+#edit {
+  text-decoration:none;
+}
+#delete {
+  text-decoration:none;
+}
+
+#add{
+  text-decoration:none;
+}

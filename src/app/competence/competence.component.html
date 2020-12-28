@@ -1,0 +1,84 @@
+
+<div class="container spacer">
+  <div class="card">
+
+    <div class="card-header text-white bg-primary">
+      <strong>
+        Liste des competences
+        <button class="btn  btn-info" style="margin-left: 600px;">
+          <a  class="clickable text-white" id="edit" >Edit</a>
+        </button>&nbsp;
+        <button  class="btn  btn-success">
+          <a class="clickable text-white" id="add" [routerLink]="['/layout/add-competence']">Add</a>
+        </button>&nbsp;
+        <button class="btn  btn-danger">
+          <a  class="clickable text-white" id="delete">Delete</a>
+        </button>
+      </strong>
+    </div>
+    <div class="card-body">
+      <div class="card-body">
+        <div class="form-inline">
+          <label><strong>Mot clé:</strong></label>&nbsp;
+          <input class="form-control" type="text" >&nbsp;
+          <button class="btn  btn-primary" >Chercher</button>
+        </div><br/>
+        <div class="form-group col-md-6">
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option value="1">Maquetter une application</option>
+            <option value="2">Developpeur back-end</option>
+            <option value="3">Developpeur front-end</option>
+            <option value="3">Developpeur full-stack</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="container d-flex">
+        <ul class="list-group col-md-4 inline" style="margin-left:30px;">
+          <li class="list-group-item">Maquetter une application</li>
+          <li class="list-group-item">Développer une interface web dynamique</li>
+          <li class="list-group-item">Réaliser une interface avec un CMS</li>
+          <li class="list-group-item">Réaliser une interface web responsive</li>
+        </ul>
+      </div>
+      <hr>
+      <div class="col-md-6" style="margin-left: 150px;">
+        <button class="btn  btn-info">
+          <a  class="clickable text-white" id="edit" >Niveau 1</a>
+        </button>&nbsp;
+        <button  class="btn  btn-info">
+          <a class="clickable text-white" id="add" [routerLink]="['/add-competence']">Niveau 2</a>
+        </button>&nbsp;
+        <button class="btn  btn-info">
+          <a  class="clickable text-white" id="delete">Niveau 3</a>
+        </button>
+      </div>
+
+      <div class="container d-flex">
+        <ul class="list-group col-md-4 inline" style="margin-top:30px;">
+          <li class="list-group-item active">
+            Groupe d'action à réaliser
+          </li>
+          <li class="list-group-item">A partir d'un schéma physique
+            de données et dans le contexte
+            d'un besoin client décrit, créer
+            une base de données sur un
+            SGBD désigné.</li>
+
+        </ul>
+
+        <ul class="list-group col-md-4 inline" style="margin-top:30px;">
+          <li class="list-group-item active">
+            Critères d'évaluation
+          </li>
+          <li class="list-group-item">
+            La BD est créée à l'aide d'un
+            script sans erreur et les
+            données sont insérées à l'aide
+            d'un script sans erreur</li>
+        </ul>
+      </div>
+      </div>
+  </div>
+</div>
+

@@ -1,0 +1,40 @@
+
+<div class="container spacer">
+  <div class="card">
+
+    <div class="card-header text-white bg-primary">
+      <strong>Liste des profils de sortie</strong>
+    </div>
+    <div class="card-body">
+      <div class="card-body">
+        <div class="form-inline">
+          <label><strong>Mot clé:</strong></label>&nbsp;
+          <input class="form-control" type="text" >&nbsp;
+          <button class="btn  btn-primary" >Chercher</button>
+        </div><br/>
+        <table class="table table-striped">
+          <tr>
+            <th>ID</th><th>Libelle</th><th>Action</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Developpeur Back</td>
+            <td>
+              <button class="btn  btn-primary">
+                <a  class="clickable text-white" id="edit" >Edit</a>
+              </button>&nbsp;
+              <button  class="btn  btn-success">
+                <a class="clickable text-white" id="add" [routerLink]="['/layout/add-profil-sortie']">Add</a>
+              </button>&nbsp;
+              <button class="btn  btn-danger">
+                <a  class="clickable text-white" id="delete">Delete</a>
+              </button>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+</div>

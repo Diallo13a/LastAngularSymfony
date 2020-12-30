@@ -40,6 +40,9 @@ import { AddCompetenceComponent } from './competence/add-competence/add-competen
 import { ListCompetenceComponent } from './competence/list-competence/list-competence.component';
 import { EditCompetenceComponent } from './competence/edit-competence/edit-competence.component';
 import { LayoutComponent } from './layout/layout.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
+import {LoginInterceptor} from './interceptors/login.interceptor';
 
 @NgModule({
   declarations: [
@@ -82,11 +85,14 @@ import { LayoutComponent } from './layout/layout.component';
     EditCompetenceComponent,
     LayoutComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+      FormsModule,
+    ],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

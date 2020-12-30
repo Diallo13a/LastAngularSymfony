@@ -19,6 +19,7 @@ import {PromoComponent} from './promo/promo.component';
 import {LayoutComponent} from './layout/layout.component';
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   {path: '', pathMatch: 'full', redirectTo: 'login' },
   {path: 'layout', component: LayoutComponent, children: [
       {path: 'profil', component: ProfilComponent},
@@ -37,7 +38,7 @@ const routes: Routes = [
       {path: 'admin', component: AdminComponent},
 
     ]},
-  {path: 'login', component: LoginComponent},
+
   {path: 'header', component: HeaderComponent},
 ];
 

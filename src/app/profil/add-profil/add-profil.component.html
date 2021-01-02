@@ -1,6 +1,5 @@
-<!--Edit Profil-->
 <div class="container spacer">
-  <div class="card">
+  <div class="card" *ngIf="mode==1">
 
     <div class="card-header text-white bg-primary">
       <strong> Nouveau profil</strong>
@@ -9,9 +8,31 @@
       <div >
         <div class="form-group">
           <label class="control-label"><strong>Libelle:</strong> </label>&nbsp;
-          <input class="form-control" type="text" >&nbsp;
+          <input class="form-control" type="text" [(ngModel)]="profil.libelle">&nbsp;
         </div>
-        <button class="btn btn-primary"><strong> Save</strong></button>
+        <button class="btn btn-info" (click)="saveProfile()"><strong> Save</strong></button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" *ngIf="mode==2">
+
+    <div class="card-header text-white bg-primary">
+      Confirmation
+    </div>
+    <div class="card-body">
+      <div >
+        <div class="form-group">
+          <label class="control-label">Id:</label>&nbsp;
+          <label>{{profil.id}}</label>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Libelle:</label>&nbsp;
+          <label>{{profil.libelle}}</label>
+        </div>
+
+        <button class="btn btn-info" (click)="mode=1">Nouveau Profil</button>
       </div>
 
     </div>

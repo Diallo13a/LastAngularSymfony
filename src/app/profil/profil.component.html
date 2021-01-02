@@ -1,4 +1,3 @@
-
 <div class="container spacer">
   <div class="card">
 
@@ -9,19 +8,19 @@
       <div class="card-body">
         <div class="form-inline">
           <label><strong>Mot clé:</strong></label>&nbsp;
-          <input class="form-control" type="text" >&nbsp;
-          <button class="btn  btn-primary" >Chercher</button>
+          <input class="form-control" type="text" [(ngModel)]="motCle">&nbsp;
+          <button class="btn  btn-primary" (click)="chercher()">Chercher</button>
         </div><br/>
         <table class="table table-striped">
           <tr>
             <th>ID</th><th>Libelle</th><th>Action</th>
           </tr>
-          <tr>
-            <td>1</td>
-            <td>Apprenant</td>
+          <tr *ngFor="let p of pageProfiles">
+            <td>{{p.id}}</td>
+            <td>{{p.libelle}}</td>
             <td>
               <button class="btn  btn-primary">
-                <a  class="clickable text-white" id="edit" >Edit</a>
+                <a  class="clickable text-white" id="edit">Edit</a>
               </button>&nbsp;
               <button class="btn  btn-success">
                 <a class="clickable text-white" id="add" [routerLink]="['/layout/add-profil']">Add</a>
@@ -32,6 +31,17 @@
             </td>
           </tr>
         </table>
+
+        <div class="container">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item" [ngClass]="{'active':i==currentPage}" *ngFor="let p of pages; let i=index ">
+                <a class="page-link clickable" (click)="gotoPage(i)">{{i}}</a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
 
       </div>
 

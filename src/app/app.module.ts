@@ -44,6 +44,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LoginInterceptor} from './interceptors/login.interceptor';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {Ng2OrderModule} from 'ng2-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { FilterPipe } from './filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,14 +88,18 @@ import {LoginInterceptor} from './interceptors/login.interceptor';
     AddCompetenceComponent,
     ListCompetenceComponent,
     EditCompetenceComponent,
-    LayoutComponent
+    LayoutComponent,
+    FilterPipe
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
         HttpClientModule,
-      FormsModule,
+        FormsModule,
+        Ng2SearchPipeModule,
+        Ng2OrderModule,
+        NgxPaginationModule
     ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true}],
   bootstrap: [AppComponent]

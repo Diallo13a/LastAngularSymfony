@@ -17,6 +17,11 @@ import {ReferentielComponent} from './referentiel/referentiel.component';
 import {AddReferentielComponent} from './referentiel/add-referentiel/add-referentiel.component';
 import {PromoComponent} from './promo/promo.component';
 import {LayoutComponent} from './layout/layout.component';
+import {EditProfilComponent} from './profil/edit-profil/edit-profil.component';
+import {EditUserComponent} from './user/edit-user/edit-user.component';
+import {DetailListUserComponent} from './user/list-user/detail-list-user/detail-list-user.component';
+import {DetailListProfilComponent} from './profil/list-profil/detail-list-profil/detail-list-profil.component';
+import {DetailPsComponent} from './profil-sortie/list-ps/detail-ps/detail-ps.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -26,9 +31,15 @@ const routes: Routes = [
       {path: 'user', component: UserComponent},
       {path: 'promo', component: PromoComponent},
       {path: 'add-profil', component: AddProfilComponent},
+      {path: 'edit-profil/:id', component: EditProfilComponent},
+      {path: 'edit-user/:id', component: EditUserComponent},
+      {path: 'detail-list-user/:id', component: DetailListUserComponent},
+      {path: 'detail-list-profil/:id', component: DetailListProfilComponent},
       {path: 'add-user', component: AddUserComponent},
+      // {path: 'edit-user', component: EditUserComponent},
       {path: 'profil-sortie', component: ProfilSortieComponent},
       {path: 'add-profil-sortie', component: AddPsComponent},
+      {path: 'detail-ps', component: DetailPsComponent},
       {path: 'groupe-competence', component: GroupeCompetenceComponent},
       {path: 'add-groupe-competence', component: AddGrpcComponent},
       {path: 'competence', component: CompetenceComponent},

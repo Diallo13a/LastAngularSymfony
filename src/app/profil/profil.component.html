@@ -8,25 +8,30 @@
       <div class="card-body">
         <div class="form-inline">
           <label><strong>Mot clé:</strong></label>&nbsp;
-          <input class="form-control" type="text" [(ngModel)]="motCle">&nbsp;
-          <button class="btn  btn-primary" (click)="chercher()">Chercher</button>
+          <input class="form-control" type="text" [(ngModel)]="search">&nbsp;
+          <button class="btn  btn-primary" (click)="chercher()">Chercher</button> &nbsp; &nbsp;
+          <button class="btn  btn-info">
+            <a class="clickable text-white" id="add" [routerLink]="['/layout/add-profil']">Add</a>
+          </button>&nbsp;
         </div><br/>
         <table class="table table-striped">
           <tr>
-            <th>ID</th><th>Libelle</th><th>Action</th>
+            <th (click)="sort('id')">ID &nbsp; <i class="fa fa-sort"></i></th>
+            <th (click)="sort('libelle')">Libelle &nbsp; <i class="fa fa-sort"></i></th>
+            <th>Action</th>
           </tr>
-          <tr *ngFor="let p of pageProfiles">
+          <tr *ngFor="let p of pageProfiles | filter:search | orderBy: key: reverse">
             <td>{{p.id}}</td>
             <td>{{p.libelle}}</td>
             <td>
               <button class="btn  btn-primary">
-                <a  class="clickable text-white" id="edit">Edit</a>
+                <a (click)="onEditProfil(p.id)" class="clickable text-white" id="edit" [routerLink]="['/layout/edit-profil']">Edit</a>
               </button>&nbsp;
-              <button class="btn  btn-success">
-                <a class="clickable text-white" id="add" [routerLink]="['/layout/add-profil']">Add</a>
+              <button class="btn  btn-secondary">
+                <a class="clickable text-white" id="detail" [routerLink]="['/layout/detail-list-profil',p.id]">Details</a>
               </button>&nbsp;
               <button class="btn  btn-danger">
-                <a  class="clickable text-white" id="delete">Delete</a>
+                <a (click)="onDeleteProfil(p)" class="clickable text-white" id="delete">Delete</a>
               </button>
             </td>
           </tr>

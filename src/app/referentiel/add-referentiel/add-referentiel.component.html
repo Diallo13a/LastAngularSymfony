@@ -2,7 +2,7 @@
 <!--Edit Profil-->
 <div class="container spacer">
   <div class="card">
-
+    <form [formGroup]="dataReferentielRecup">
     <div class="card-header text-white bg-primary">
       <strong> Nouvelle referentiel</strong>
     </div>
@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">
           <label for="exampleFormControlFile1"><strong>Programme:</strong></label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1" placeholder="uploader le programme">
+          <input type="file" class="form-control" accept="application/vnd.oasis.opendocument.text" formControlName="programme" (change)="uploadFile($event)"/>
         </div>
 
         <div class="form-group">
@@ -39,9 +39,10 @@
           <textarea class="form-control" id="exampleFormControlTextarea2"></textarea>
         </div>
 
-        <button class="btn btn-primary"><strong> Save</strong></button>
+        <button class="btn btn-primary" (click)="saveReferentiel()"><strong> Save</strong></button>
       </div>
 
     </div>
+    </form>
   </div>
 </div>

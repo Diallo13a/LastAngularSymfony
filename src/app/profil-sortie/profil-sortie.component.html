@@ -10,7 +10,10 @@
         <div class="form-inline">
           <label><strong>Mot clé:</strong></label>&nbsp;
           <input class="form-control" type="text" >&nbsp;
-          <button class="btn  btn-primary" >Chercher</button>
+          <button class="btn  btn-primary" >Chercher</button> &nbsp;&nbsp;
+          <button  class="btn  btn-info">
+            <a class="clickable text-white" id="add" [routerLink]="['/layout/add-profil-sortie']">Add</a>
+          </button>&nbsp;
         </div><br/>
         <table class="table table-striped">
           <tr>
@@ -23,8 +26,8 @@
               <button class="btn  btn-primary">
                 <a  class="clickable text-white" id="edit" >Edit</a>
               </button>&nbsp;
-              <button  class="btn  btn-success">
-                <a class="clickable text-white" id="add" [routerLink]="['/layout/add-profil-sortie']">Add</a>
+              <button  class="btn  btn-secondary">
+                <a class="clickable text-white" id="detail" [routerLink]="['/layout/detail-ps']">Details</a>
               </button>&nbsp;
               <button class="btn  btn-danger">
                 <a  class="clickable text-white" id="delete">Delete</a>

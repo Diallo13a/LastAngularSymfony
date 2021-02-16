@@ -1,56 +1,88 @@
+<!--<div class="container spacer">-->
+<!--  <div class="card">-->
 
-<div class="container d-flex">
-  <ul class="list-group col-md-4 inline">
-    <li class="list-group-item active">
-      Libelle
-      <button class="btn  btn-info" style="margin-left: 50px;">
-        <a  class="clickable text-white" id="edit">Edit</a>
-      </button>&nbsp;
+<!--    <div class="card-header text-white bg-primary">-->
+<!--      <strong>Liste des referentiels</strong>-->
+<!--    </div>-->
+<!--    <div class="card-body">-->
+<!--      <div class="card-body">-->
+<!--        <div class="form-inline">-->
+<!--          <label><strong>Mot clé:</strong></label>&nbsp;-->
+<!--          <input class="form-control" type="text" [(ngModel)]="search">&nbsp;-->
+<!--&lt;!&ndash;          <button class="btn  btn-primary" (click)="chercher()">Chercher</button> &nbsp; &nbsp;&ndash;&gt;-->
+<!--          <button class="btn  btn-info">-->
+<!--            <a class="clickable text-white" id="add" [routerLink]="['/layout/add-referentiel']">Add</a>-->
+<!--          </button>&nbsp;-->
+<!--        </div><br/>-->
+<!--        <table class="table table-striped">-->
+<!--          <tr>-->
+<!--            <th (click)="sort('id')">ID &nbsp; <i class="fa fa-sort"></i></th>-->
+<!--            <th (click)="sort('libelle')">Libelle &nbsp; <i class="fa fa-sort"></i></th>-->
+<!--            <th (click)="sort('libelle')">Presentation &nbsp; <i class="fa fa-sort"></i></th>-->
+<!--            <th>Action</th>-->
+<!--          </tr>-->
+<!--          <tr *ngFor="let p of pageReferentiels">-->
+<!--            <td>{{p.id}}</td>-->
+<!--            <td>{{p.libelle}}</td>-->
+<!--            <td>{{p.presentation}}</td>-->
+<!--            <td>-->
+<!--              <button class="btn  btn-primary">-->
+<!--&lt;!&ndash;                <a (click)="onEditProfil(p.id)" class="clickable text-white" id="edit" [routerLink]="['/layout/edit-referentiel']">Edit</a>&ndash;&gt;-->
+<!--              </button>&nbsp;-->
+<!--              <button class="btn  btn-secondary">-->
+<!--&lt;!&ndash;                <a class="clickable text-white" id="detail" [routerLink]="['/layout/detail-list-profil',p.id]">Details</a>&ndash;&gt;-->
+<!--              </button>&nbsp;-->
+<!--              <button class="btn  btn-danger">-->
+<!--&lt;!&ndash;                <a (click)="onDeleteProfil(p)" class="clickable text-white" id="delete">Delete</a>&ndash;&gt;-->
+<!--              </button>-->
+<!--            </td>-->
+<!--          </tr>-->
+<!--        </table>-->
+
+<!--        <div class="container">-->
+<!--          <nav aria-label="Page navigation example">-->
+<!--            <ul class="pagination">-->
+<!--              <li class="page-item" [ngClass]="{'active':i==currentPage}" *ngFor="let p of pages; let i=index ">-->
+<!--                <a class="page-link clickable" (click)="gotoPage(i)">{{i}}</a>-->
+<!--              </li>-->
+
+<!--            </ul>-->
+<!--          </nav>-->
+<!--        </div>-->
+
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+
+
+<div class="container" >
+
+  <div class="row">
+    <div class="d-flex justify-content-end col-12">
       <button routerLink="/new-profil" class="btn  btn-success">
         <a class="clickable text-white" id="add" [routerLink]="['/layout/add-referentiel']">Add</a>
       </button>&nbsp;
-      <button class="btn  btn-danger">
-        <a  class="clickable text-white" id="delete">Delete</a>
-      </button>
-    </li>
-    <li class="list-group-item">Presentation</li>
-    <li class="list-group-item">Groupe de Competences</li>
-    <li class="list-group-item">Critere d'évaluation</li>
-    <li class="list-group-item">Critere d'admission</li>
-
-  </ul>
-
-  <ul class="list-group col-md-4 inline" >
-    <li class="list-group-item active">
-      Libelle
+    </div>
+  <div class="col-4" *ngFor="let p of pageReferentiels">
+  <ul class="list-group inline">
+    <li class="list-group-item active d-flex">
+      {{p.libelle}}
       <button class="btn  btn-info" style="margin-left: 50px;">
         <a  class="clickable text-white" id="edit">Edit</a>
       </button>&nbsp;
       <button routerLink="/new-profil" class="btn  btn-success">
-        <a class="clickable text-white" id="add" [routerLink]="['/add-referentiel']">Add</a>
+        <a class="clickable text-white" id="detail" [routerLink]="['/layout/add-referentiel']">Details</a>
       </button>&nbsp;
       <button class="btn  btn-danger">
         <a  class="clickable text-white" id="delete">Delete</a>
       </button>
-    </li>
-    <li class="list-group-item">Presentation</li>
-    <li class="list-group-item">Groupe de Competences</li>
-    <li class="list-group-item">Critere d'évaluation</li>
-    <li class="list-group-item">Critere d'admission</li>
-  </ul>
 
-  <ul class="list-group col-md-4 inline" >
-    <li class="list-group-item active">
-      Libelle
-      <button class="btn  btn-info" style="margin-left: 50px;">
-        <a  class="clickable text-white" id="edit">Edit</a>
-      </button>&nbsp;
-      <button routerLink="/new-profil" class="btn  btn-success">
-        <a class="clickable text-white" id="add" [routerLink]="['/add-referentiel']">Add</a>
-      </button>&nbsp;
-      <button class="btn  btn-danger">
-        <a  class="clickable text-white" id="delete">Delete</a>
-      </button>
     </li>
     <li class="list-group-item">Presentation</li>
     <li class="list-group-item">Groupe de Competences</li>
@@ -58,70 +90,9 @@
     <li class="list-group-item">Critere d'admission</li>
 
   </ul>
-</div>
+  </div>
+  </div>
 
-
-
-<div class="container d-flex">
-  <ul class="list-group col-md-4 inline" style="margin-top:30px;">
-    <li class="list-group-item active">
-      Libelle
-      <button class="btn  btn-info" style="margin-left: 50px;">
-        <a  class="clickable text-white" id="edit">Edit</a>
-      </button>&nbsp;
-      <button routerLink="/new-profil" class="btn  btn-success">
-        <a class="clickable text-white" id="add" [routerLink]="['/add-referentiel']">Add</a>
-      </button>&nbsp;
-      <button class="btn  btn-danger">
-        <a  class="clickable text-white" id="delete">Delete</a>
-      </button>
-    </li>
-    <li class="list-group-item">Presentation</li>
-    <li class="list-group-item">Groupe de Competences</li>
-    <li class="list-group-item">Critere d'évaluation</li>
-    <li class="list-group-item">Critere d'admission</li>
-
-  </ul>
-
-  <ul class="list-group col-md-4 inline" style="margin-top:30px;">
-    <li class="list-group-item active">
-      Libelle
-      <button class="btn  btn-info" style="margin-left: 50px;">
-        <a  class="clickable text-white" id="edit">Edit</a>
-      </button>&nbsp;
-      <button routerLink="/new-profil" class="btn  btn-success">
-        <a class="clickable text-white" id="add" [routerLink]="['/add-referentiel']">Add</a>
-      </button>&nbsp;
-      <button class="btn  btn-danger">
-        <a  class="clickable text-white" id="delete">Delete</a>
-      </button>
-    </li>
-    <li class="list-group-item">Presentation</li>
-    <li class="list-group-item">Groupe de Competences</li>
-    <li class="list-group-item">Critere d'évaluation</li>
-    <li class="list-group-item">Critere d'admission</li>
-
-  </ul>
-
-  <ul class="list-group col-md-4 inline" style="margin-top:30px;">
-    <li class="list-group-item active">
-      Libelle
-      <button class="btn  btn-info" style="margin-left: 50px;">
-        <a  class="clickable text-white" id="edit">Edit</a>
-      </button>&nbsp;
-      <button routerLink="/new-profil" class="btn  btn-success">
-        <a class="clickable text-white" id="add" [routerLink]="['/add-referentiel']">Add</a>
-      </button>&nbsp;
-      <button class="btn  btn-danger">
-        <a  class="clickable text-white" id="delete">Delete</a>
-      </button>
-    </li>
-    <li class="list-group-item">Presentation</li>
-    <li class="list-group-item">Groupe de Competences</li>
-    <li class="list-group-item">Critere d'évaluation</li>
-    <li class="list-group-item">Critere d'admission</li>
-
-  </ul>
 </div>
 
 

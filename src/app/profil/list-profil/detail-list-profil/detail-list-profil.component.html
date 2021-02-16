@@ -1,1 +1,33 @@
-<p>detail-list-profil works!</p>
+<div class="container spacer" *ngFor="let users of detailprofil.user">
+  <div class="card">
+
+    <div class="card-header text-white bg-primary">
+      <strong> Details des: {{detailprofil.libelle}}S</strong>
+    </div>
+    <div class="card-body">
+      <div >
+        <div class="form-group">
+          <label class="control-label"><strong>Id: {{users.id}}</strong> </label>&nbsp;
+        </div>
+        <div class="form-group">
+          <label class="control-label"><strong>Nom: {{users?.nom}}</strong> </label>&nbsp;
+        </div>
+        <div class="form-group">
+          <label class="control-label"><strong>Prenom: {{users?.prenom}}</strong> </label>&nbsp;
+        </div>
+        <div class="form-group">
+          <label class="control-label"><strong>Email: {{users?.email}}</strong> </label>&nbsp;
+        </div>
+        <div class="form-group">
+          <label class="control-label"><strong>Photo: <img src="data:image/png;base64,{{users.photo}}" alt="" width="50" height="50" class="rounded"></strong> </label>&nbsp;
+        </div>
+
+<!--        <div class="form-group">-->
+<!--          <label class="control-label"><strong>Photo: <img src="data:image/png;base64,{{detailprofil.photo}}" alt="" width="75" height="75" class="rounded"></strong> </label>&nbsp;-->
+<!--        </div>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>

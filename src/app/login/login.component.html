@@ -18,7 +18,7 @@
       <h3>Login</h3>
 
       <!--Form with header-->
-      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="example-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form">
         <div class="form">
 
 
@@ -26,6 +26,7 @@
             <label for="form2">Your usersname / e-mail</label>
             <input type="text" id="form2" class="form-control input-lg" formControlName="username" [ngClass]="{'is-invalid': submitted && f.username.errors}">
             <div class="text-danger" *ngIf="submitted && f.username.errors">
+<!--              <span *ngIf="username.invalid">Username is required</span>-->
               <div *ngIf="f.username.errors.required">Username is required</div>
               <div *ngIf="f.username.errors.username">Email n'est pas valide</div>
             </div>
@@ -36,6 +37,7 @@
             <label for="form4">Your password</label>
             <input type="password" formControlName="password" id="form4" class="form-control input-lg" [ngClass]="{'is-invalid': submitted && f.password.errors}">
             <div class="text-danger" *ngIf="submitted && f.password.errors">
+              <span></span>
               <div *ngIf="f.password.errors.required">Password is required</div>
               <div *ngIf="f.password.errors.minLength">Mot de passe invalide</div>
             </div>
@@ -43,8 +45,10 @@
           </div>
 
           <div class="text-xs-center">
-            <button class="btn btn-deep-purple" (click)="onSubmit()" type="submit" [routerLink]="['/layout/admin']">Login</button>
+            <button class="btn btn-deep-purple" (click)="onSubmit()" type="submit">Login</button>
           </div>
+
+          <small *ngIf="fakeData" class="text-danger"><strong>{{errorMessage}}</strong></small>
 
 
         </div>

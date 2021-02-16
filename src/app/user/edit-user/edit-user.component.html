@@ -1,1 +1,152 @@
-<p>edit-user works!</p>
+<!--Add User-->
+<div class="container spacer">
+  <div class="card" *ngIf="mode==1">
+
+    <div class="card-header text-white bg-primary">
+      <strong> Nouveau Utilisateur</strong>
+    </div>
+    <div class="card-body">
+      <div >
+        <form [formGroup]="user">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="email" [(ngModel)]="email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password"  formControlName="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Nom</label>
+            <input type="text" name="nom" class="form-control" id="inputAddress" placeholder="Nom"  formControlName="nom" [(ngModel)]="nom">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2"> Prenom</label>
+            <input type="text" name="prenom" class="form-control" id="inputAddress2" placeholder="Prenom"  formControlName="prenom">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">Date Naissance</label>
+              <input type="date" name="date" class="form-control" id="inputCity" >
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputAvatar">Avatar</label>
+              <input type="file" name="file"class="form-control" id="inputAvatar" >
+            </div>
+<!--            <div class="form-group col-md-2">-->
+<!--              <label for="inputZip">Profil</label>-->
+<!--              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">-->
+<!--                <option selected>Choose...</option>-->
+<!--                <option value="1">Admin</option>-->
+<!--                <option value="2">Apprenant</option>-->
+<!--                <option value="3">Formateur</option>-->
+<!--                <option value="3">Cm</option>-->
+<!--              </select>-->
+<!--            </div>-->
+          </div>
+          <button class="btn btn-info" (click)="updateUser()"><strong> Save</strong></button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="card" *ngIf="mode==2">
+
+    <div class="card-header text-white bg-primary">
+      <strong> Nouveau Utilisateur</strong>
+    </div>
+    <div class="card-body">
+      <div >
+        <form>
+          <div class="form-group">
+            <label class="control-label">Id:</label>&nbsp;
+            <label>{{user.id}}</label>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email:</label>
+              <label>{{user.email}}</label>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <label>{{user.password}}</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Nom</label>
+            <label>{{user.nom}}</label>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2"> Prenom</label>
+            <label>{{user.prenom}}</label>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">Date Naissance</label>
+              <label>{{user.date}}</label>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputAvatar">Avatar</label>
+              <label>{{user.photo}}</label>
+            </div>
+            <!--            <div class="form-group col-md-2">-->
+            <!--              <label for="inputZip">Profil</label>-->
+            <!--              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">-->
+            <!--                <option selected>Choose...</option>-->
+            <!--                <option value="1">Admin</option>-->
+            <!--                <option value="2">Apprenant</option>-->
+            <!--                <option value="3">Formateur</option>-->
+            <!--                <option value="3">Cm</option>-->
+            <!--              </select>-->
+            <!--            </div>-->
+          </div>
+          <button class="btn btn-info" (click)="mode=1">Nouveau Utilisateur</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--<div class="container spacer">-->
+<!--  <div class="card" *ngIf="mode==1">-->
+
+<!--    <div class="card-header text-white bg-primary">-->
+<!--      <strong> Nouveau utilisateur</strong>-->
+<!--    </div>-->
+<!--    <div class="card-body">-->
+<!--      <div >-->
+<!--        <div class="form-group">-->
+<!--          <label class="control-label"><strong>Libelle:</strong> </label>&nbsp;-->
+<!--          <input class="form-control" type="text" [(ngModel)]="user.email">&nbsp;-->
+<!--        </div>-->
+<!--        <button class="btn btn-info" (click)="updateUser()"><strong> Save</strong></button>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="card" *ngIf="mode==2">-->
+
+<!--    <div class="card-header text-white bg-primary">-->
+<!--      Confirmation-->
+<!--    </div>-->
+<!--    <div class="card-body">-->
+<!--      <div >-->
+<!--        <div class="form-group">-->
+<!--          <label class="control-label">Id:</label>&nbsp;-->
+<!--          <label>{{user.id}}</label>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label class="control-label">Libelle:</label>&nbsp;-->
+<!--          <label>{{user.email}}</label>-->
+<!--        </div>-->
+
+<!--        <button class="btn btn-info" (click)="mode=1">Nouveau Profil</button>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

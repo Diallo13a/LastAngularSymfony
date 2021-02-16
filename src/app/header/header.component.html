@@ -30,9 +30,15 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['referentiel']"><strong> Referentiel</strong></a>
       </li>
+<!--      <li class="nav-item">-->
+<!--        <img src="{{user.image}}" alt="image-utilisateur" width="45" height="45" class="rounded">-->
+<!--        {{user.username}}-->
+<!--      </li>-->
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu">
+
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -40,6 +46,21 @@
           <a class="dropdown-item" href="#">Separated link</a>
         </div>
       </li>
+
+
+      <div class="nav-item dropdown">
+        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
+<!--          <img src="data:image/png;base64,{{user.photo}}" class="avatar"  width="45" height="45" class="rounded">-->
+          <img src="data:image/png;base64,{{user.photo}}" alt="" width="30" height="30" class="rounded">
+          {{user.nom}}
+          <b class="caret"></b>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+<!--          <a  (click)="deconect()" href="#" class="dropdown-item"><i class="material-icons"></i> Deconexion</a>-->
+        </div>
+      </div>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
